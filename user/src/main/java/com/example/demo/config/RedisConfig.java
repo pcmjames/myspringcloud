@@ -46,7 +46,7 @@ public class RedisConfig extends CachingConfigurerSupport
     public CacheManager cacheManager(RedisTemplate redisTemplate) {
         RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
         //设置缓存过期时间
-        rcm.setDefaultExpiration(30);//秒
+        rcm.setDefaultExpiration(60 * 2);//秒
         return rcm;
     }
 
@@ -59,6 +59,7 @@ public class RedisConfig extends CachingConfigurerSupport
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jackson2JsonRedisSerializer.setObjectMapper(om);
         template.setValueSerializer(jackson2JsonRedisSerializer);
+//        template.setKeySerializer(jackson2JsonRedisSerializer);
         template.afterPropertiesSet();
         return template;
     }

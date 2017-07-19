@@ -4,6 +4,7 @@ import com.example.demo.Service.UserService;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,14 +25,16 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
+    @Cacheable(value = "findAllUser",keyGenerator = "keyGenerator")
     public List<User> findAllUser()
     {
         return userMapper.findAllUser();
     }
 
     @Override
+    @Cacheable(value = "findUserById",keyGenerator = "keyGenerator")
     public User findUserById(Integer userId)
     {
-        return userMapper.findUserById(userId);
+        return userMapper.selectByPrimaryKey(userId);
     }
 }

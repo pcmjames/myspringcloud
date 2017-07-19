@@ -3,9 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.Service.UserService;
 import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,8 +22,15 @@ public class UserController
         return users;
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "hello";
+    @GetMapping("/user/{id}")
+    public User findUserById(@PathVariable("id") Integer userId){
+        User user = userService.findUserById(userId);
+        return user;
+    }
+
+    @PostMapping("/addUser")
+    public User addUser(@RequestBody User user){
+        userService.createUser(user);
+        return user;
     }
 }

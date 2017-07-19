@@ -1,18 +1,18 @@
 package com.example.demo.model;
 
 public class User {
-    private Integer userId;
+    private Integer userid;
 
     private String name;
 
     private String comment;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserid() {
+        return userid;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -29,15 +29,5 @@ public class User {
 
     public void setComment(String comment) {
         this.comment = comment == null ? null : comment.trim();
-    }
-
-    @Override
-    public String toString()
-    {
-        return "{" +
-                "userId:" + userId +
-                ", name:'" + name + '\'' +
-                ", comment:'" + comment + '\'' +
-                '}';
     }
 }
