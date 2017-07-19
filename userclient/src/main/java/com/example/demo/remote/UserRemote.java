@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by pcm on 2017/7/19.
  */
-@FeignClient(name = "user-server")
+@FeignClient(name = "user-server",fallback = UserRemoteImpl.class)
 public interface UserRemote
 {
     @GetMapping("/user")
