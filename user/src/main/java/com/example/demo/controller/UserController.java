@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.Service.UserService;
 import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class UserController
 {
     @Autowired
     private UserService userService;
+    @Value("${hello}")
+    private String hello;
 
     @GetMapping("/user")
     public List<User> findUser(){
@@ -32,5 +35,10 @@ public class UserController
     public User addUser(@RequestBody User user){
         userService.createUser(user);
         return user;
+    }
+
+    @GetMapping("test")
+    public String getHello(){
+        return hello;
     }
 }
