@@ -5,7 +5,15 @@ spring:
     name: config-server
   profiles:
       active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:E:/springcloud/myspringcloud/config
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka/   # 注册中心eurka地址
+      defaultZone: http://localhost:8000/eureka/
+management:
+  security:
+    enabled: false
