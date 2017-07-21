@@ -24,9 +24,11 @@ public class UserController
     public String findUser(){
         String jsonStr;
         List<User> users = userRemote.findUser();
-        if(users == null || users.isEmpty()){
+        if(users == null){
             jsonStr = "服务出错了！";
-        }else{
+        }else if(users.isEmpty()){
+            jsonStr = "没有用户！";
+        }else {
             jsonStr = JSON.toJSONString(users);
         }
         return jsonStr;

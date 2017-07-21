@@ -16,19 +16,16 @@ import java.util.List;
 @Component
 public class UserRemoteImpl implements UserRemote {
     @Override
-    @GetMapping("/user")
     public List<User> findUser() {
         return null;
     }
 
     @Override
-    @GetMapping("/user/{id}")
     public User findUserById(@PathVariable("id") Integer userId) {
         return null;
     }
 
     @Override
-    @PostMapping("/addUser")
     public User addUser(@RequestBody User user) {
         return null;
     }
