@@ -25,14 +25,14 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    @Cacheable(value = "findAllUser",keyGenerator = "keyGenerator")
+    @Cacheable(value = "userfindAllUser",keyGenerator = "keyGenerator")
     public List<User> findAllUser()
     {
         return userMapper.findAllUser();
     }
 
     @Override
-    @Cacheable(value = "findUserById",keyGenerator = "keyGenerator")
+    @Cacheable(value = "userfindUserById",keyGenerator = "keyGenerator")
     public User findUserById(Integer userId)
     {
         return userMapper.selectByPrimaryKey(userId);

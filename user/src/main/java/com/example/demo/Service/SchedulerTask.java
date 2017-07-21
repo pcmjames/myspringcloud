@@ -26,7 +26,7 @@ public class SchedulerTask
 
     @Scheduled(cron="*/30 * * * * ?")
     private void process(){
-        Set<String> keySet = redisTemplate.keys("*");
+        Set<String> keySet = redisTemplate.keys("user*");
         redisTemplate.delete(keySet);
         System.out.println(new Date()+"  清除用户缓存信息!");
     }
