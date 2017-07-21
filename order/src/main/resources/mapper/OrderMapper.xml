@@ -83,6 +83,6 @@
     SELECT * FROM `order`
   </select>
   <select id="findOrderByUserId" resultType="com.example.demo.model.Order" parameterType="java.lang.Integer">
-    SELECT * FROM  `order` WHERE orderId=#{orderid,jdbcType=INTEGER}
+    SELECT * FROM  `order` WHERE userId=#{userid,jdbcType=INTEGER}
   </select>
 </mapper>

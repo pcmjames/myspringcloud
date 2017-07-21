@@ -18,7 +18,7 @@ public class SchedulerTask
     RedisTemplate redisTemplate;
 
 
-    @Scheduled(cron="*/30 * * * * ?")
+    @Scheduled(cron="0 */1 * * * ?")
     private void process(){
         Set<String> keySet = redisTemplate.keys("order*");
         redisTemplate.delete(keySet);
