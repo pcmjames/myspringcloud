@@ -12,6 +12,12 @@ zuul:
     user-client:
       path: /user-client/**
       serviceId: user-client
+    order-server:
+      path: /order-server/**
+      serviceId: order-server
+    order-client:
+      path: /order/client/**
+      serviceId: order-client
 
 eureka:
   client:
