@@ -21,6 +21,6 @@ public interface UserRemote
     @GetMapping("/user/{id}")
     public User findUserById(@PathVariable("id") Integer userId);
 
-    @PostMapping("/addUser")
+    @PostMapping("/user")
     public User addUser(@RequestBody User user);
 }

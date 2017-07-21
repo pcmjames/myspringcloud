@@ -48,7 +48,7 @@ public class UserController
         return jsonStr;
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/user")
     public String addUser(@RequestBody User user){
         String jsonStr;
         try{
