@@ -14,7 +14,6 @@ target/
 *.iws
 *.iml
 *.ipr
-*.rej
 
 ### NetBeans ###
 nbproject/private/
@@ -23,5 +22,3 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-A.txt
-B.txt
